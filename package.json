@@ -1,6 +1,6 @@
 {
   "name": "octopus",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "lib/parallel_executor.js",
   "scripts": {
