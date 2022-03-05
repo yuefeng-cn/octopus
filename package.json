@@ -16,5 +16,20 @@
     "ts-mocha": "^7.0.0",
     "mocha": "^7.1.2",
     "typescript": "^4.6.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:yuefengNiu/octopus.git"
+  },
+  "homepage": "https://github.com/yuefengNiu/octopus",
+  "files": [
+    "lib/**/*"
+  ],
+  "keywords": [
+    "promise",
+    "all",
+    "async",
+    "parallel",
+    "concurrent"
+  ]
 }
