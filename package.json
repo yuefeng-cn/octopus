@@ -1,8 +1,8 @@
 {
-  "name": "octopus",
-  "version": "1.0.4",
+  "name": "octopus-promise",
+  "version": "1.0.0",
   "description": "",
-  "main": "lib/parallel_executor.js",
+  "main": "lib/octopus.js",
   "scripts": {
     "build": "tsc",
     "test": "ts-mocha -p tsconfig.json tests/**/*.test.ts --timeout 5000",
