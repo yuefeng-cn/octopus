@@ -1,6 +1,6 @@
 {
   "name": "octopus-promise",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "lib/octopus.js",
   "scripts": {
