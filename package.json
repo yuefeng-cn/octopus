@@ -2,7 +2,7 @@
   "name": "octopus-promise",
   "version": "1.0.4",
   "description": "",
-  "main": "lib/octopus.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "test": "ts-mocha -p tsconfig.json tests/**/*.test.ts --timeout 5000",
