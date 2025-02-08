@@ -1,21 +1,21 @@
-import TaskSource from './task_source';
-import Worker, { Executor } from './worker';
-export default class OctoPus<T> {
+import TaskSource from "./task_source";
+import Worker, { Executor } from "./worker";
+
+export class OctoPus<T> {
   source: Iterator<T>;
   options: {
     workers: number;
-    executor: Executor;
-  }
+    executor: Executor<T>;
+  };
 
-  constructor(source: AsyncIterable<T> | Iterable<T>, options: { workers: number, executor: Executor }) {
-    if (Symbol.asyncIterator in source) {
-      // @ts-ignore
-      this.source = source[ Symbol.asyncIterator ]();
-    } else if (Symbol.iterator in source) {
-      // @ts-ignore
-      this.source = source[ Symbol.iterator ]();
+  constructor(
+    source: Iterable<T>,
+    options: { workers: number; executor: Executor<T> }
+  ) {
+    if (Symbol.iterator in source) {
+      this.source = source[Symbol.iterator]();
     } else {
-      throw new Error('invalid source of executors');
+      throw new Error("invalid source of executors");
     }
 
     this.options = options;
@@ -31,7 +31,23 @@ export default class OctoPus<T> {
     }
 
     return await new Promise((resolve, reject) => {
-      Promise.all(workers).then(() => { resolve(true)}).catch((err) => reject(err));
+      Promise.all(workers)
+        .then(() => {
+          resolve(true);
+        })
+        .catch((err) => reject(err));
     });
+  }
+}
+
+export function* getIndex(num: number) {
+  for (let i = 0; i < num; i++) {
+    yield i;
+  }
+}
+
+export function* getItem<T>(items: T[]) {
+  for (let i = 0; i < items.length; i++) {
+    yield items[i];
   }
 }

@@ -1,8 +1,8 @@
 export default class TaskSource<T> {
-  source: Iterator<T>;
+  source: Iterator<T> | AsyncIterator<T>;
   stopping: boolean = false;
 
-  constructor(source: Iterator<T>) {
+  constructor(source: Iterator<T> | AsyncIterator<T>) {
     this.source = source;
   }
 
