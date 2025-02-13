@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/yuefengNiu/octopus",
   "files": [
-    "lib/**/*"
+    "dist/**/*"
   ],
   "keywords": [
     "promise",
